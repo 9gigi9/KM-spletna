@@ -1,15 +1,9 @@
-import {
-  Component,
-  CUSTOM_ELEMENTS_SCHEMA,
-  inject,
-  Input,
-} from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, Input } from '@angular/core';
 import { Product } from '../../../../models/product.model';
 import { ProductCardComponent } from '../product-card/product-card.component';
 
 import { CommonModule } from '@angular/common';
 
-import { BreakpointObserver } from '@angular/cdk/layout';
 import { TranslateModule } from '@ngx-translate/core';
 import { ProductModalComponent } from '../product-modal/product-modal.component';
 
@@ -27,12 +21,9 @@ import { ProductModalComponent } from '../product-modal/product-modal.component'
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class ProductsComponent {
-  private readonly breakpointObserver = inject(BreakpointObserver);
-
   @Input({ required: true }) products!: Product[];
 
   selectedProduct: Product | null = null;
-  readonly isMobile = this.breakpointObserver.isMatched('(max-width: 768px)');
 
   openModal(product: Product) {
     this.selectedProduct = product;

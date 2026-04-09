@@ -1,13 +1,7 @@
 <div class="store-container">
   <app-product-card
     *ngFor="let product of products"
-    [title]="product.title | translate"
-    [shortDesc]="product.shortDesc | translate"
-    [price]="product.price"
-    [onDiscount]="product.onDiscount"
-    [discountPrice]="product.discountPrice"
-    [discountPercentage]="product.discountPercentage"
-    [imageUrl]="product.imgUrl"
+    [product]="product"
     (click)="openModal(product)"
   ></app-product-card>
 </div>

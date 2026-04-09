@@ -1,24 +1,21 @@
 <div class="product-card">
-  <img
-    [src]="imageUrl"
-    alt="Slika kviza"
-    class="product-image"
-  />
+  <img [src]="product.imgUrl" alt="Slika kviza" class="product-image" />
 
   <div class="product-content">
-    <h3 class="product-title">{{ title }}</h3>
-    <p class="product-subtitle">{{ shortDesc }}</p>
+    <h3 class="product-title">{{ product.title }}</h3>
+    <p class="product-subtitle">{{ product.shortDesc }}</p>
 
-    <ng-container *ngIf="onDiscount; else regularPrice">
+    <ng-container *ngIf="product.onDiscount; else regularPrice">
       <div class="card-discount-line">
-        <span class="card-original-price">{{ price }} €</span>
-        <span class="card-discount-price">{{ discountPrice }} €</span>
-        <span class="card-discount-percent">-{{ discountPercentage }} %</span>
+        <span class="card-original-price">{{ product.price }} €</span>
+        <span class="card-discount-price">{{ product.discountPrice }} €</span>
+        <span class="card-discount-percent"
+          >-{{ product.discountPercentage }} %</span
+        >
       </div>
     </ng-container>
     <ng-template #regularPrice>
-      <p class="product-price">{{ price }} €</p>
+      <p class="product-price">{{ product.price }} €</p>
     </ng-template>
   </div>
-
 </div>
