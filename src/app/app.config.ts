@@ -1,13 +1,12 @@
-import {ApplicationConfig} from '@angular/core';
-import {provideRouter} from '@angular/router';
-import { provideHttpClient } from '@angular/common/http';
-import {routes} from './app.routes';
+import { provideHttpClient, withFetch } from '@angular/common/http';
+import { ApplicationConfig } from '@angular/core';
+import { provideRouter, withInMemoryScrolling } from '@angular/router';
+import { routes } from './app.routes';
 
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { importProvidersFrom } from '@angular/core';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 // Factory za nalaganje prevodov
 export function HttpLoaderFactory(http: HttpClient) {
@@ -16,17 +15,20 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideHttpClient(),
-    provideRouter(routes),
+    provideHttpClient(withFetch()),
+    provideRouter(
+      routes,
+      withInMemoryScrolling({ scrollPositionRestoration: 'top' }),
+    ),
     importProvidersFrom(
       TranslateModule.forRoot({
         defaultLanguage: 'sl',
         loader: {
           provide: TranslateLoader,
           useFactory: HttpLoaderFactory,
-          deps: [HttpClient]
-        }
-      })
-    )
-  ]
+          deps: [HttpClient],
+        },
+      }),
+    ),
+  ],
 };

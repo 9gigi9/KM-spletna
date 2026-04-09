@@ -1,9 +1,0 @@
-<div class="modal-overlay" *ngIf="show" (click)="close()">
-  <div class="modal-content" (click)="$event.stopPropagation()">
-    <img [src]="imageUrl" alt="{{ title }}" />
-    <h2>{{ title }}</h2>
-    <p>{{ shortDesc }}</p>
-    <strong>{{ price }}</strong>
-    <button (click)="close()">Zapri</button>
-  </div>
-</div>

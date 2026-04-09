@@ -1,27 +1,3 @@
-.store-container {
-  display: flex;
-  flex-wrap: wrap;
-  background-color: #faf8f6;
-  height: auto;
-  min-height: calc(80vh - 60px); /* Adjust 60px to match the height of your header */
-  padding: 20px;
-  padding-top: 15vh;
-  justify-content: center;
-  padding-bottom: 15vh;
-  align-self: stretch;      /* po višini, če je vertikalni flex */
-  gap: 4vw;
-}
-
-.button-container{
-  display: flex;
-  justify-content: center;
-  padding-bottom: 30px;
-}
-
-.rounded-btn:hover {
-  background-color: #ffd62e;
-}
-
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -31,7 +7,6 @@
   background: rgba(0, 0, 0, 0.5);
   z-index: 999;
 }
-
 
 .modal-body {
   position: fixed;
@@ -48,7 +23,7 @@
   display: flex;
   flex-direction: row;
   gap: 1rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   color: black;
   flex: 1;
   overflow: hidden;
@@ -70,6 +45,7 @@
   font-size: 20px;
   padding-left: 50px;
   padding-right: 30px;
+  text-align: justify;
 }
 
 .long-desc {
@@ -119,7 +95,6 @@
   justify-content: center;
 }
 
-
 .close-btn {
   position: absolute;
   top: 1rem;
@@ -140,17 +115,16 @@ swiper {
   height: 100%;
 }
 
-swiper-container{
- --swiper-theme-color: #fcbf49;
-   flex: 1;
- }
+swiper-container {
+  --swiper-theme-color: #fcbf49;
+  flex: 1;
+}
 
- swiper-slide {
-   display: flex;
-   align-items: center;
-   justify-content: center;
- }
-
+swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 /* Spremeni barvo puščic */
 swiper-container::part(button-prev),
@@ -199,19 +173,19 @@ swiper-slide video {
 }
 
 .price {
-   font-size: 20px;
-   font-family: sans-serif;
-   font-weight: bold;
-   color: #000;
-   margin: 0;
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #000;
+  margin: 0;
 }
 
 .discount-price {
-   font-size: 20px;
-   font-family: sans-serif;
-   font-weight: bold;
-   color: #000;
-   margin: 0;
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #000;
+  margin: 0;
 }
 
 .original-price {
@@ -227,30 +201,11 @@ swiper-slide video {
   font-weight: 400;
 }
 
-
 @media (max-width: 768px) {
-
-/*  .classa{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    height: 100vh; *//* ali kolk placa rabiš *//*
-  }*/
-
-/*  .top {
-    *//* nič posebnega, samo naj bo minimalno *//*
-    background-color: blue;
+  .store-container {
+    justify-content: center;
+    gap: 4rem;
   }
-
-  .bottom {
-    flex: 1; *//* vzame preostali prostor *//*
-    overflow: auto; *//* če hočeš scroll znotraj *//*
-    background-color: yellow;
-  }*/
-
 
   .modal-container {
     position: fixed;
@@ -278,10 +233,10 @@ swiper-slide video {
   .modal-body-mobile {
     flex: 1;
     overflow-y: auto;
-/*    background-color: blue;*/
+    /*    background-color: blue;*/
     box-shadow: none;
     padding-right: 0;
-}
+  }
 
   .modal-gallery {
     width: 100%;
@@ -325,4 +280,3 @@ swiper-slide video {
     object-fit: contain;
   }
 }
-

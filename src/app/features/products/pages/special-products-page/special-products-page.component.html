@@ -1,0 +1,5 @@
+@if (productService.specialProducts$ | async; as specialProducts) {
+  <app-products [products]="specialProducts"></app-products>
+} @else {
+  <p>loading</p>
+}
