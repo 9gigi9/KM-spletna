@@ -1,5 +1,4 @@
 import { DIALOG_DATA, DialogRef } from '@angular/cdk/dialog';
-import { BreakpointObserver } from '@angular/cdk/layout';
 import { CommonModule } from '@angular/common';
 import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
@@ -14,12 +13,8 @@ import { Product } from '../../../../models/product.model';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class ProductDetailsComponent {
-  private readonly breakpointObserver = inject(BreakpointObserver);
-
   readonly dialogRef = inject(DialogRef);
   readonly product = inject<Product>(DIALOG_DATA);
-
-  readonly isMobile = this.breakpointObserver.isMatched('(max-width: 768px)');
 
   closeModal() {
     this.dialogRef.close();
