@@ -1,34 +1,28 @@
+import { DIALOG_DATA, DialogRef } from '@angular/cdk/dialog';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { CommonModule } from '@angular/common';
-import {
-  Component,
-  CUSTOM_ELEMENTS_SCHEMA,
-  EventEmitter,
-  inject,
-  Input,
-  Output,
-} from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { Product } from '../../../../models/product.model';
 
 @Component({
-  selector: 'app-product-modal',
+  selector: 'app-product-details',
   standalone: true,
   imports: [CommonModule, TranslateModule],
-  templateUrl: './product-modal.component.html',
-  styleUrl: './product-modal.component.css',
+  templateUrl: './product-details.component.html',
+  styleUrl: './product-details.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class ProductModalComponent {
+export class ProductDetailsComponent {
   private readonly breakpointObserver = inject(BreakpointObserver);
 
-  @Input({ required: true }) product!: Product;
-  @Output() close = new EventEmitter<void>();
+  readonly dialogRef = inject(DialogRef);
+  readonly product = inject<Product>(DIALOG_DATA);
 
   readonly isMobile = this.breakpointObserver.isMatched('(max-width: 768px)');
 
   closeModal() {
-    this.close.emit();
+    this.dialogRef.close();
   }
 
   goToStripeLink() {

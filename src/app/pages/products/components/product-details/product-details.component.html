@@ -1,0 +1,79 @@
+<div class="modal-body">
+  <button class="close-btn" (click)="closeModal()">
+    <i class="bi bi-x-lg"></i>
+  </button>
+
+  <div class="modal-gallery">
+    <swiper-container
+      navigation="true"
+      pagination="true"
+      loop="true"
+      style="width: 100%; height: 100%"
+    >
+      <swiper-slide *ngFor="let media of product.gallery">
+        <img
+          *ngIf="media.type === 'image'"
+          [src]="media.src"
+          alt="Product image"
+          style="width: 100%; border-radius: 8px"
+        />
+        <video
+          *ngIf="media.type === 'video'"
+          [src]="media.src"
+          controls
+          preload="metadata"
+          style="width: 100%; border-radius: 8px"
+        ></video>
+      </swiper-slide>
+    </swiper-container>
+  </div>
+
+  <div class="modal-content">
+    <h2>{{ product.title | translate }}</h2>
+    <div class="long-desc">
+      <ng-container *ngIf="product.isDescArray; else stringDesc">
+        <ng-container *ngFor="let textPart of product.longDescArray">
+          <span>
+            <ng-container *ngIf="textPart.isBold; else normalText">
+              <strong>{{ textPart.text | translate }}</strong>
+            </ng-container>
+            <ng-template #normalText>{{
+              textPart.text | translate
+            }}</ng-template>
+
+            <!-- Dodaj presledek ali prelom -->
+            <ng-container *ngIf="textPart.newLine; else space">
+              <br /><br />
+            </ng-container>
+            <ng-template #space>&nbsp;</ng-template>
+          </span>
+        </ng-container>
+      </ng-container>
+
+      <ng-template #stringDesc>
+        <p *ngFor="let paragraph of product.longDesc.split('\n\n')">
+          {{ paragraph }}
+        </p>
+      </ng-template>
+    </div>
+
+    <div class="modal-bottom">
+      <ng-container *ngIf="product.onDiscount; else regularPrice">
+        <div class="discount-line">
+          <span class="original-price">{{ product.price }} €</span>
+          <span class="discount-price">{{ product.discountPrice }} €</span>
+          <span class="discount-percent">
+            -{{ product.discountPercentage }}%</span
+          >
+        </div>
+      </ng-container>
+      <ng-template #regularPrice>
+        <span class="price">{{ product.price }} €</span>
+      </ng-template>
+
+      <button class="buy-btn" (click)="goToStripeLink()">
+        {{ "store.buy" | translate }}
+      </button>
+    </div>
+  </div>
+</div>

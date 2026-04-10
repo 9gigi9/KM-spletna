@@ -1,11 +1,4 @@
-import {
-    Component,
-    CUSTOM_ELEMENTS_SCHEMA,
-    inject,
-    NO_ERRORS_SCHEMA,
-    OnInit,
-    PLATFORM_ID,
-} from '@angular/core';
+import { Component, inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Event } from '../../../../models/event.model';
 
 import { CommonModule, isPlatformBrowser } from '@angular/common';
@@ -19,7 +12,6 @@ import { EventService } from '../../services/event.service';
   imports: [CommonModule],
   templateUrl: './event-details.component.html',
   styleUrl: './event-details.component.css',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
 export class EventDetailsComponent implements OnInit {
   private readonly eventService = inject(EventService);

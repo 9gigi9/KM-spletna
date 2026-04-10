@@ -5,7 +5,3 @@
     (click)="openModal(product)"
   ></app-product-card>
 </div>
-
-@if (selectedProduct) {
-  <app-product-modal [product]="selectedProduct" (close)="closeModal()" />
-}

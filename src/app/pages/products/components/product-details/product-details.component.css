@@ -1,0 +1,241 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  background: #fff;
+  color: black;
+  border-radius: 8px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 1000px;
+  height: 70%;
+  max-height: 700px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding-inline: 2rem;
+  overflow-y: auto;
+  box-shadow: none;
+  padding-right: 0;
+}
+
+.modal-gallery {
+  max-width: 40%;
+  height: 100%;
+}
+
+swiper {
+  width: 100%;
+  height: 100%;
+}
+
+swiper-container {
+  --swiper-theme-color: #fcbf49;
+  flex: 1;
+}
+
+swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Spremeni barvo puščic */
+swiper-container::part(button-prev),
+swiper-container::part(button-next) {
+  color: var(--background-color); /* ali #ffd62e, kot gumb */
+  opacity: 0.5;
+  font-size: 20px;
+}
+
+/* Če želiš bolj opazne na hover */
+swiper-container::part(button-prev):hover,
+swiper-container::part(button-next):hover {
+  color: #ffd62e;
+}
+
+/* Spremeni barvo pagination krogcev */
+swiper-container::part(pagination-bullet) {
+  background-color: var(--background-color);
+  opacity: 0.5;
+}
+
+swiper-container::part(pagination-bullet-active) {
+  background-color: var(--background-color);
+}
+
+.modal-gallery img,
+.modal-gallery video,
+swiper img,
+swiper video {
+  border-radius: 0 !important;
+}
+/*
+ Video/slike naj popolnoma zapolnijo slide*/
+swiper-slide img,
+swiper-slide video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 0 !important;
+}
+
+.modal-content {
+  max-width: 60%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+  font-size: 20px;
+  padding-left: 50px;
+  padding-right: 30px;
+  text-align: justify;
+}
+
+.modal-content h2 {
+  margin-top: 20px;
+  font-size: 40px;
+  font-family: "DM Serif Text", serif;
+  font-weight: 40;
+  font-style: normal;
+  line-height: 1;
+}
+
+.long-desc {
+  flex: 1;
+  overflow-y: auto;
+  margin: 0;
+  padding-right: 10px;
+}
+
+.modal-bottom {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 25px;
+  padding-top: 1rem;
+  border-top: 1px solid #ded9d3;
+  flex-shrink: 0;
+}
+
+.discount-line {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.price {
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #000;
+  margin: 0;
+}
+
+.discount-price {
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #000;
+  margin: 0;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: grey;
+  opacity: 0.7;
+  font-size: 20px;
+}
+
+.discount-percent {
+  color: #a00;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.buy-btn {
+  background: #fcbf49;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+  color: black !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  :host {
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+  }
+
+  .close-btn {
+    margin: 2rem;
+    margin-left: auto;
+  }
+
+  .modal-body {
+    flex-direction: column;
+    padding-inline: 0;
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+
+  .modal-gallery {
+    width: 100%;
+    height: 50%;
+    max-width: 100%;
+  }
+
+  .modal-content {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+    font-size: 18px;
+    overflow: visible;
+  }
+
+  .modal-content h2 {
+    font-size: 28px;
+    margin-top: 0;
+  }
+
+  .long-desc {
+    overflow: visible;
+    flex: unset;
+    padding-right: 0;
+  }
+
+  .modal-bottom {
+    font-size: 20px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  swiper-container {
+    height: 100%;
+  }
+}

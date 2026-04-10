@@ -2,8 +2,8 @@
   <img [src]="product.imgUrl" alt="Slika kviza" class="product-image" />
 
   <div class="product-content">
-    <h3 class="product-title">{{ product.title }}</h3>
-    <p class="product-subtitle">{{ product.shortDesc }}</p>
+    <h3 class="product-title">{{ product.title | translate }}</h3>
+    <p class="product-subtitle">{{ product.shortDesc | translate }}</p>
 
     <ng-container *ngIf="product.onDiscount; else regularPrice">
       <div class="card-discount-line">
