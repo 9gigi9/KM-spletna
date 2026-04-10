@@ -1,19 +1,21 @@
-import { Component, Inject, PLATFORM_ID, OnInit } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { TranslateService } from '@ngx-translate/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  Inject,
+  OnInit,
+  PLATFORM_ID,
+} from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [
-    RouterLink,
-    RouterLinkActive,
-    TranslateModule
-  ],
+  imports: [RouterLink, RouterLinkActive, TranslateModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrl: './header.component.css',
 })
 export class HeaderComponent implements OnInit {
   menuValue: boolean = false;
@@ -22,14 +24,23 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private translate: TranslateService,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private el: ElementRef,
   ) {}
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: Event) {
+    if (!this.el.nativeElement.contains(event.target)) {
+      this.closeMenu();
+    }
+  }
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       const savedLang = localStorage.getItem('lang');
       const browserLang = navigator.language;
-      const langToUse = savedLang || (browserLang.startsWith('sl') ? 'sl' : 'en');
+      const langToUse =
+        savedLang || (browserLang.startsWith('sl') ? 'sl' : 'en');
 
       this.currentLang = langToUse as 'sl' | 'en';
       this.translate.setDefaultLang('sl');
