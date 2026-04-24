@@ -1,0 +1,35 @@
+[
+  {
+    "id": 0,
+    "title": "store.treasureHunt.title",
+    "shortDesc": "store.treasureHunt.shortDesc",
+    "price": "34,90",
+    "onDiscount": true,
+    "discountPrice": "29,90",
+    "discountPercentage":"15",
+    "imgUrl": "assets/images/products/lov-na-zaklad/lovtavernaog.jpg",
+    "isDescArray": true,
+    "longDescArray": [
+      { "isBold": false, "newLine": false, "text": "store.treasureHunt.longDesc.part1" },
+      { "isBold": true,  "newLine": false, "text": "store.treasureHunt.longDesc.part2" },
+      { "isBold": false, "newLine": true,  "text": "store.treasureHunt.longDesc.part3" },
+      { "isBold": false, "newLine": false, "text": "store.treasureHunt.longDesc.part4" },
+      { "isBold": true,  "newLine": true,  "text": "store.treasureHunt.longDesc.part5" },
+      { "isBold": true,  "newLine": true,  "text": "store.treasureHunt.longDesc.part6" },
+      { "isBold": false, "newLine": false, "text": "store.treasureHunt.longDesc.part7" },
+      { "isBold": true,  "newLine": false, "text": "store.treasureHunt.longDesc.part8" },
+      { "isBold": false, "newLine": true,  "text": "store.treasureHunt.longDesc.part9" },
+      { "isBold": true,  "newLine": true,  "text": "store.treasureHunt.longDesc.part10" }
+    ],
+    "longDesc": "Lov na zaklad vas bo popeljal po ulicah Kopra, enega najstarejših mest v Sloveniji. Skozi zabavne izzive boste razkrivali namige beneškega trgovca Marca da Ponteja, ki je leta 1698 skrivnostno zapustil mesto. Legenda pravi, da je v naglici za sabo pustil skriti zaklad – del svojega bogastva, ki ga ni uspel odnesti s seboj. Vam bo uspelo razvozlati sledi starega trgovca in odkriti zaklad? Ob odkrivanju stoletja starih skrivnosti boste spoznali znamenitosti in zanimivosti starega mestnega jedra Kopra.\n\nKako poteka lov na zaklad?\n\nLov na zaklad kupite s klikom na spodnji gumb KUPI. S potrdilom, ki ga prejmete na elektronski naslov, lov na zaklad prevzamete v trgovini Stellaris na Čevljarski ulici, najstarejši in najznamenitejši trgovski ulici v Kopru. Vse, kar potrebujete za izziv, bo v eni veliki kuverti. Navodila vas bodo vodila po nalogah, ki jih boste reševali na različnih delih starega mestnega jedra Kopra. Če vmes ne boste uspeli razvozlati kakšnega dokumenta, si boste lahko pomagali z namigi, priloženimi v kuverti.\n\nSi upate podati po stopinjah beneškega trgovca Marca da Ponteja in odkriti zaklad?",
+    "gallery": [
+      { "type": "image", "src": "assets/images/products/lov-na-zaklad/lovdnevnik.jpg" },
+      { "type": "image", "src": "assets/images/products/lov-na-zaklad/lovmapa.jpg" },
+      { "type": "image", "src": "assets/images/products/lov-na-zaklad/lovtaverna.jpg" },
+      { "type": "image", "src": "assets/images/products/lov-na-zaklad/lovcevljarska.jpg" },
+      { "type": "image", "src": "assets/images/products/lov-na-zaklad/lovcarpaccio.jpg" },
+      { "type": "image", "src": "assets/images/products/lov-na-zaklad/lovulica.jpg" }
+    ],
+    "stripeLink": "https://buy.stripe.com/eVq5kF8beeGMfl5aih5J60d"
+  }
+]

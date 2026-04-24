@@ -28,7 +28,7 @@
     "stripeLink": "https://buy.stripe.com/8x2fZa6zO3ay2Tw8eKg362n"
   },
   {
-    "id": 1,
+    "id": 4,
     "title": "store.springBundleTwo.title",
     "shortDesc": "store.springBundleTwo.shortDesc",
     "price": "32,99",
@@ -59,7 +59,7 @@
     "stripeLink": "https://buy.stripe.com/eVq7sE0bqcL8bq252yg362q"
   },
   {
-    "id": 2,
+    "id": 5,
     "title": "store.springBundleThree.title",
     "shortDesc": "store.springBundleThree.shortDesc",
     "price": "42,99",
@@ -90,7 +90,7 @@
     "stripeLink": "https://buy.stripe.com/9B66oA1fu26u8dQ2Uqg362r"
   },
   {
-    "id": 3,
+    "id": 6,
     "title": "store.springBundleFour.title",
     "shortDesc": "store.springBundleFour.shortDesc",
     "price": "49,99",
@@ -121,7 +121,7 @@
     "stripeLink": "https://buy.stripe.com/bJe3co0bqbH4cu67aGg362s"
   },
   {
-    "id": 4,
+    "id": 1,
     "title": "store.quizIpsilon.title",
     "shortDesc": "store.quizIpsilon.shortDesc",
     "price": "19,99",
@@ -149,7 +149,7 @@
     "stripeLink": "https://buy.stripe.com/dRmfZaaQ4cL8bq2cv0g362o"
   },
   {
-    "id": 5,
+    "id": 2,
     "title": "store.quizSigma.title",
     "shortDesc": "store.quizSigma.shortDesc",
     "price": "19,99",
@@ -179,7 +179,7 @@
 
 
   {
-    "id": 6,
+    "id": 3,
     "title": "store.digitalQuizMovies.title",
     "shortDesc": "store.digitalQuizMovies.shortDesc",
     "price": "19,99",
@@ -205,7 +205,7 @@
   },
 
   {
-    "id": 7,
+    "id": 4,
     "title": "store.digitalQuizHP.title",
     "shortDesc": "store.digitalQuizHP.shortDesc",
     "price": "19,99",
@@ -234,7 +234,7 @@
 
 
   {
-    "id": 8,
+    "id": 7,
     "title": "store.voucher.title",
     "shortDesc": "store.voucher.shortDesc",
     "price": "23,99",
@@ -260,7 +260,7 @@
     "stripeLink": "https://buy.stripe.com/6oU00cgao6mK3XA2Uqg3604"
   },
   {
-    "id": 9,
+    "id": 8,
     "title": "store.treasureHunt.title",
     "shortDesc": "store.treasureHunt.shortDesc",
     "price": "34,90",
