@@ -1,14 +1,14 @@
 .custom-card {
   display: flex;
-  padding: 24px; /* Večji padding */
-  padding-top: 6px;
-  padding-bottom: 6px;
-  /*margin: 3dvw;*/
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
   border-radius: 20px; /* Ovalni robovi */
   background-color: var(--background-color);
   border: 0.5px solid #ffb3d9; /* Tanjši roza neon border */
-  box-shadow: 0 0 1px #FF69B4,
-  0 0 9px rgba(255, 105, 180, 0.5); /* Manj intenzivno */
+  box-shadow:
+    0 0 1px #ff69b4,
+    0 0 9px rgba(255, 105, 180, 0.5); /* Manj intenzivno */
   max-width: 400px; /* Omejena širina za prelom na dve vrstici */
   font-size: 19px; /* Večja pisava */
   overflow: hidden;
