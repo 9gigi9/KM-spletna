@@ -3,7 +3,6 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-hire-us-card',
-  standalone: true,
   templateUrl: './hire-us-card.component.html',
   imports: [NgStyle],
   styleUrls: ['./hire-us-card.component.css'],

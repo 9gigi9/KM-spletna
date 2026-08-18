@@ -5,12 +5,11 @@ import { TranslateModule } from '@ngx-translate/core';
 import { Product } from '../../../../models/product.model';
 
 @Component({
-  selector: 'app-product-details',
-  standalone: true,
-  imports: [CommonModule, TranslateModule],
-  templateUrl: './product-details.component.html',
-  styleUrl: './product-details.component.css',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    selector: 'app-product-details',
+    imports: [CommonModule, TranslateModule],
+    templateUrl: './product-details.component.html',
+    styleUrl: './product-details.component.css',
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ProductDetailsComponent {
   readonly dialogRef = inject(DialogRef);

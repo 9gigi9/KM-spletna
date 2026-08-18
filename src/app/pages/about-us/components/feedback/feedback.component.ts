@@ -2,7 +2,6 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-feedback',
-  standalone: true,
   templateUrl: './feedback.component.html',
   styleUrl: './feedback.component.css',
 })

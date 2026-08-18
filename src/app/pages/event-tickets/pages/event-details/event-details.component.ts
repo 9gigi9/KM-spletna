@@ -7,11 +7,10 @@ import { take } from 'rxjs';
 import { EventService } from '../../services/event.service';
 
 @Component({
-  selector: 'app-event-details',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './event-details.component.html',
-  styleUrl: './event-details.component.css',
+    selector: 'app-event-details',
+    imports: [CommonModule],
+    templateUrl: './event-details.component.html',
+    styleUrl: './event-details.component.css'
 })
 export class EventDetailsComponent implements OnInit {
   private readonly eventService = inject(EventService);

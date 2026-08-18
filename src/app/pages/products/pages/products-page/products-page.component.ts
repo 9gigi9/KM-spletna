@@ -5,10 +5,9 @@ import { ProductsComponent } from '../../components/products/products.component'
 import { ProductService } from '../../services/product.service';
 
 @Component({
-  selector: 'app-products-page',
-  standalone: true,
-  imports: [CommonModule, ProductsComponent],
-  templateUrl: './products-page.component.html',
+    selector: 'app-products-page',
+    imports: [CommonModule, ProductsComponent],
+    templateUrl: './products-page.component.html'
 })
 export class ProductsPageComponent {
   readonly productService = inject(ProductService);

@@ -5,7 +5,6 @@ import { AboutUsDetailsComponent } from './components/about-us-details/about-us-
 
 @Component({
   selector: 'app-about-us',
-  standalone: true,
   imports: [
     KmAnimationComponent,
     AboutUsDetailsComponent,

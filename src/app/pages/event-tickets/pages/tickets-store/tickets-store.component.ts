@@ -5,11 +5,10 @@ import { TicketCardComponent } from '../../components/ticket-card/ticket-card.co
 import { EventService } from '../../services/event.service';
 
 @Component({
-  selector: 'app-tickets-store',
-  standalone: true,
-  imports: [CommonModule, TicketCardComponent],
-  templateUrl: './tickets-store.component.html',
-  styleUrl: './tickets-store.component.css',
+    selector: 'app-tickets-store',
+    imports: [CommonModule, TicketCardComponent],
+    templateUrl: './tickets-store.component.html',
+    styleUrl: './tickets-store.component.css'
 })
 export class TicketsStoreComponent {
   readonly eventService = inject(EventService);
