@@ -5,7 +5,7 @@
     <h3 class="product-title">{{ product.title | translate }}</h3>
     <p class="product-subtitle">{{ product.shortDesc | translate }}</p>
 
-    <ng-container *ngIf="product.onDiscount; else regularPrice">
+    @if (product.onDiscount) {
       <div class="card-discount-line">
         <span class="card-original-price">{{ product.price }} €</span>
         <span class="card-discount-price">{{ product.discountPrice }} €</span>
@@ -13,9 +13,8 @@
           >-{{ product.discountPercentage }} %</span
         >
       </div>
-    </ng-container>
-    <ng-template #regularPrice>
+    } @else {
       <p class="product-price">{{ product.price }} €</p>
-    </ng-template>
+    }
   </div>
 </div>

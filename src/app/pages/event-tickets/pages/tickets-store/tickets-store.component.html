@@ -1,12 +1,13 @@
 <div class="tickets-wrapper">
   <div class="tickets-container">
-    <app-ticket-card
-      *ngFor="let ticket of eventService.events$ | async"
-      [title]="ticket.title"
-      [date]="ticket.date"
-      [time]="ticket.time"
-      [imgUrl]="ticket.imgUrl"
-      (click)="goToEventDetails(ticket.id)"
-    ></app-ticket-card>
+    @for (ticket of eventService.events$ | async; track ticket) {
+      <app-ticket-card
+        [title]="ticket.title"
+        [date]="ticket.date"
+        [time]="ticket.time"
+        [imgUrl]="ticket.imgUrl"
+        (click)="goToEventDetails(ticket.id)"
+      ></app-ticket-card>
+    }
   </div>
 </div>

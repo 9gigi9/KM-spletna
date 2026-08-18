@@ -1,15 +1,16 @@
 <div class="background">
   <div class="event-container">
-    <ng-container *ngIf="event; else eventNotFound">
+    @if (event) {
       <img [src]="event.imgUrl" alt="Event image" class="event-image" />
-
       <div class="event-info">
         <h2>{{ event.title }}</h2>
         <p class="event-datetime">
-          <span>{{ event.date }}, {{ event.time }}</span><br />
-          <span class="event-location"><i class="bi bi-geo-alt-fill"></i> {{ event.location }}</span>
+          <span>{{ event.date }}, {{ event.time }}</span
+          ><br />
+          <span class="event-location"
+            ><i class="bi bi-geo-alt-fill"></i> {{ event.location }}</span
+          >
         </p>
-
         <div class="ticket-box">
           <div class="ticket-header">
             <div class="labels">
@@ -18,28 +19,29 @@
             </div>
             <div class="price-label">{{ event.price }}€</div>
           </div>
-          <button class="buy-button" (click)="openStripeLink()">Kupi vstopnico</button>
+          <button class="buy-button" (click)="openStripeLink()">
+            Kupi vstopnico
+          </button>
         </div>
-
         <div class="text">
-          <ng-container  *ngFor="let textPart of event.longDescArray">
-              <span>
-                <ng-container *ngIf="textPart.isBold; else normalText">
-                  <strong>{{ textPart.text }}</strong>
-                </ng-container>
-                <ng-template #normalText>{{ textPart.text }}</ng-template>
-                <ng-container *ngIf="textPart.newLine; else space">
-                  <br><br>
-                </ng-container>
-                <ng-template #space>&nbsp;</ng-template>
-              </span>
-          </ng-container>
+          @for (textPart of event.longDescArray; track textPart) {
+            <span>
+              @if (textPart.isBold) {
+                <strong>{{ textPart.text }}</strong>
+              } @else {
+                {{ textPart.text }}
+              }
+              @if (textPart.newLine) {
+                <br /><br />
+              } @else {
+                &nbsp;
+              }
+            </span>
+          }
         </div>
       </div>
-    </ng-container>
+    } @else {
+      <p>Event not found.</p>
+    }
   </div>
 </div>
-
-<ng-template #eventNotFound>
-    <p>Event not found.</p>
-</ng-template>

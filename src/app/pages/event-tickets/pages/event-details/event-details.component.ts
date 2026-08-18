@@ -1,16 +1,15 @@
 import { Component, inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Event } from '../../../../models/event.model';
 
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { take } from 'rxjs';
 import { EventService } from '../../services/event.service';
 
 @Component({
-    selector: 'app-event-details',
-    imports: [CommonModule],
-    templateUrl: './event-details.component.html',
-    styleUrl: './event-details.component.css'
+  selector: 'app-event-details',
+  templateUrl: './event-details.component.html',
+  styleUrl: './event-details.component.css',
 })
 export class EventDetailsComponent implements OnInit {
   private readonly eventService = inject(EventService);
