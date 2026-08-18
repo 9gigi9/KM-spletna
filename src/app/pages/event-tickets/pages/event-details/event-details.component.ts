@@ -1,9 +1,8 @@
-import { Component, inject, OnInit, PLATFORM_ID } from '@angular/core';
-import { Event } from '../../../../models/event.model';
-
 import { isPlatformBrowser } from '@angular/common';
+import { Component, computed, inject, PLATFORM_ID } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
-import { take } from 'rxjs';
+import { Event } from '../../../../models/event.model';
 import { EventService } from '../../services/event.service';
 
 @Component({
@@ -11,31 +10,22 @@ import { EventService } from '../../services/event.service';
   templateUrl: './event-details.component.html',
   styleUrl: './event-details.component.css',
 })
-export class EventDetailsComponent implements OnInit {
+export class EventDetailsComponent {
   private readonly eventService = inject(EventService);
   private readonly route = inject(ActivatedRoute);
   private readonly platformId = inject(PLATFORM_ID);
 
-  event: Event | undefined;
-
-  ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id) {
-      this.eventService.events$.pipe(take(1)).subscribe((data) => {
-        const found = data.find((e) => e.id === id);
-        if (found) {
-          this.event = found;
-        } else {
-          console.error('Event not found with id:', id);
-        }
-      });
-    }
-  }
+  private readonly id = this.route.snapshot.paramMap.get('id');
+  private readonly events = toSignal(this.eventService.events$, {
+    initialValue: [] as Event[],
+  });
+  readonly event = computed(() => this.events().find((e) => e.id === this.id));
 
   openStripeLink() {
-    if (!isPlatformBrowser(this.platformId) || this.event === undefined) {
+    const event = this.event();
+    if (!isPlatformBrowser(this.platformId) || event === undefined) {
       return;
     }
-    window.open(this.event.stripeLink, '_blank');
+    window.open(event.stripeLink, '_blank');
   }
 }

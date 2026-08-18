@@ -1,30 +1,31 @@
 <div class="background">
   <div class="event-container">
-    @if (event) {
-      <img [src]="event.imgUrl" alt="Event image" class="event-image" />
+    @let eventData = event();
+    @if (eventData) {
+      <img [src]="eventData.imgUrl" alt="Event image" class="event-image" />
       <div class="event-info">
-        <h2>{{ event.title }}</h2>
+        <h2>{{ eventData.title }}</h2>
         <p class="event-datetime">
-          <span>{{ event.date }}, {{ event.time }}</span
+          <span>{{ eventData.date }}, {{ eventData.time }}</span
           ><br />
           <span class="event-location"
-            ><i class="bi bi-geo-alt-fill"></i> {{ event.location }}</span
+            ><i class="bi bi-geo-alt-fill"></i> {{ eventData.location }}</span
           >
         </p>
         <div class="ticket-box">
           <div class="ticket-header">
             <div class="labels">
               <div class="price-label">VSTOPNICA</div>
-              <div>Vstopnica za skupino do {{ event.groupLimit }} oseb</div>
+              <div>Vstopnica za skupino do {{ eventData.groupLimit }} oseb</div>
             </div>
-            <div class="price-label">{{ event.price }}€</div>
+            <div class="price-label">{{ eventData.price }}€</div>
           </div>
           <button class="buy-button" (click)="openStripeLink()">
             Kupi vstopnico
           </button>
         </div>
         <div class="text">
-          @for (textPart of event.longDescArray; track textPart) {
+          @for (textPart of eventData.longDescArray; track textPart) {
             <span>
               @if (textPart.isBold) {
                 <strong>{{ textPart.text }}</strong>
