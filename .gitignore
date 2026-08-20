@@ -40,3 +40,6 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# CodeGraph (Claude Code indexing helper, local, machine-specific)
+.codegraph/
