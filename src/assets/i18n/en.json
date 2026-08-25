@@ -3,9 +3,12 @@
     "aboutUs": "About Us",
     "hireUs": "Hire Us",
     "store": "Store",
+    "myQuizzes": "My quizzes",
     "contact": "Contact us",
-    "ticketsStore": "Quiz tickets"
-
+    "ticketsStore": "Quiz tickets",
+    "noLoggedInUser": "User is not logged in",
+    "logout": "Logout",
+    "signInWithGoogle": "Sign in with Google"
   },
   "store": {
     "buy": "Buy",

@@ -11,6 +11,7 @@
     <div class="desktop_menu" [class.mobile_menu]="menuValue()">
       <ul>
         <li
+          class="nav-item"
           routerLink="/about-us"
           routerLinkActive="active"
           (click)="closeMenu()"
@@ -18,6 +19,7 @@
           {{ "header.aboutUs" | translate }}
         </li>
         <li
+          class="nav-item"
           routerLink="/hire-us"
           routerLinkActive="active"
           (click)="closeMenu()"
@@ -25,23 +27,38 @@
           {{ "header.hireUs" | translate }}
         </li>
         <li
+          class="nav-item"
           routerLink="/tickets-store"
           routerLinkActive="active"
           (click)="closeMenu()"
         >
           {{ "header.ticketsStore" | translate }}
         </li>
-        <li routerLink="/store" routerLinkActive="active" (click)="closeMenu()">
+        <li
+          class="nav-item"
+          routerLink="/store"
+          routerLinkActive="active"
+          (click)="closeMenu()"
+        >
           {{ "header.store" | translate }}
         </li>
         <li
+          class="nav-item"
           routerLink="/contact-us"
           routerLinkActive="active"
           (click)="closeMenu()"
         >
           {{ "header.contact" | translate }}
         </li>
-        <li class="language-switcher">
+        <li
+          class="nav-item"
+          routerLink="/my-quizzes"
+          routerLinkActive="active"
+          (click)="closeMenu()"
+        >
+          {{ "header.myQuizzes" | translate }}
+        </li>
+        <li class="nav-item language-switcher">
           <button
             (click)="setLanguage('sl')"
             [class.active-lang]="currentLang() === 'sl'"
@@ -59,6 +76,29 @@
             />EN
           </button>
         </li>
+
+        @if (isMobile()) {
+          <li class="user-icon flex-column">
+            <ng-container *ngTemplateOutlet="userAvatar" />
+            <app-user-menu (navigate)="closeMenu()" />
+          </li>
+        } @else {
+          <li class="user-icon nav-item dropdown">
+            <a
+              #userDropdownToggle
+              class="nav-link"
+              role="button"
+              data-bs-toggle="dropdown"
+              data-bs-auto-close="outside"
+              aria-expanded="false"
+            >
+              <ng-container *ngTemplateOutlet="userAvatar" />
+            </a>
+            <div class="dropdown-menu dropdown-menu-end">
+              <app-user-menu (navigate)="closeMenu()" />
+            </div>
+          </li>
+        }
       </ul>
     </div>
     <div class="menu-icon" (click)="openMenu()">
@@ -66,3 +106,16 @@
     </div>
   </nav>
 </header>
+
+<ng-template #userAvatar>
+  @if (authService.currentUser()?.photoURL; as photoURL) {
+    <img
+      [src]="photoURL"
+      class="avatar-img rounded-circle object-fit-cover align-middle"
+      alt=""
+      referrerpolicy="no-referrer"
+    />
+  } @else {
+    <i class="bi bi-person"></i>
+  }
+</ng-template>

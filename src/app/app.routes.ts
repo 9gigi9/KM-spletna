@@ -7,6 +7,7 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { EventDetailsComponent } from './pages/event-tickets/pages/event-details/event-details.component';
 import { TicketsStoreComponent } from './pages/event-tickets/pages/tickets-store/tickets-store.component';
 import { HireUsComponent } from './pages/hire-us/hire-us.component';
+import { MyQuizzesComponent } from './pages/my-quizzes/my-quizzes.component';
 import { ProductsPageComponent } from './pages/products/pages/products-page/products-page.component';
 import { SpecialProductsPageComponent } from './pages/products/pages/special-products-page/special-products-page.component';
 
@@ -18,6 +19,7 @@ export const routes: Routes = [
   { path: 'tickets-store/:id', component: EventDetailsComponent },
   { path: 'tickets-store', component: TicketsStoreComponent },
   { path: 'store', component: ProductsPageComponent },
+  { path: 'my-quizzes', component: MyQuizzesComponent },
   { path: 'store/special', component: SpecialProductsPageComponent },
   { path: 'after-purchase', component: AfterPurchaseComponent },
   { path: 'after-purchase-hunt', component: AfterPurchaseHuntComponent },
