@@ -17,7 +17,8 @@
   width: 100%;
 }
 
-.contact-info, .footer-info {
+.contact-info,
+.footer-info {
   margin: 10px;
 }
 
@@ -60,7 +61,7 @@
   .footer-info {
     align-self: flex-start; /* Premaknemo copyright na začetek vrstice */
     text-align: left;
-    margin-top: 20px; /* Dodamo nekaj razmika med kontakti in copyright */
+    margin-top: 40px; /* Dodamo nekaj razmika med kontakti in copyright */
   }
 
   .contact-item {

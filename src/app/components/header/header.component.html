@@ -1,28 +1,68 @@
 <header>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3 col-sm-3 col-3 logo">
-        <img src="assets/images/logo.png" class="logo-img" alt="Kviz mojster logo" routerLink="/about-us" />
-      </div>
+  <nav class="navbar d-flex justify-content-between align-items-center">
+    <img
+      role="button"
+      src="assets/images/logo.png"
+      class="logo-img cursor-pointer"
+      alt="Kviz mojster logo"
+      routerLink="/about-us"
+    />
 
-      <div class="col-md-9 col-sm-9 col-9">
-        <div class="desktop_menu" [class.mobile_menu]="menuValue">
-          <ul>
-            <li routerLink="/about-us" routerLinkActive="active" (click)="closeMenu()">{{ 'header.aboutUs' | translate }}</li>
-            <li routerLink="/hire-us" routerLinkActive="active" (click)="closeMenu()">{{ 'header.hireUs' | translate }}</li>
-            <li routerLink="/tickets-store" routerLinkActive="active" (click)="closeMenu()">{{ 'header.ticketsStore' | translate }}</li>
-            <li routerLink="/store" routerLinkActive="active" (click)="closeMenu()">{{ 'header.store' | translate }}</li>
-            <li routerLink="/contact-us" routerLinkActive="active" (click)="closeMenu()">{{ 'header.contact' | translate }}</li>
-            <li class="language-switcher">
-              <button (click)="setLanguage('sl')" [class.active-lang]="currentLang === 'sl'"><img src="https://hatscripts.github.io/circle-flags/flags/si.svg"/>SL</button>
-              <button (click)="setLanguage('en')" [class.active-lang]="currentLang === 'en'"><img src="https://hatscripts.github.io/circle-flags/flags/gb.svg"/>EN</button>
-            </li>
-          </ul>
-        </div>
-        <div class="menu-icon" (click)="openMenu()">
-          <i class="{{menuIcon}}"></i>
-        </div>
-      </div>
+    <div class="desktop_menu" [class.mobile_menu]="menuValue()">
+      <ul>
+        <li
+          routerLink="/about-us"
+          routerLinkActive="active"
+          (click)="closeMenu()"
+        >
+          {{ "header.aboutUs" | translate }}
+        </li>
+        <li
+          routerLink="/hire-us"
+          routerLinkActive="active"
+          (click)="closeMenu()"
+        >
+          {{ "header.hireUs" | translate }}
+        </li>
+        <li
+          routerLink="/tickets-store"
+          routerLinkActive="active"
+          (click)="closeMenu()"
+        >
+          {{ "header.ticketsStore" | translate }}
+        </li>
+        <li routerLink="/store" routerLinkActive="active" (click)="closeMenu()">
+          {{ "header.store" | translate }}
+        </li>
+        <li
+          routerLink="/contact-us"
+          routerLinkActive="active"
+          (click)="closeMenu()"
+        >
+          {{ "header.contact" | translate }}
+        </li>
+        <li class="language-switcher">
+          <button
+            (click)="setLanguage('sl')"
+            [class.active-lang]="currentLang() === 'sl'"
+          >
+            <img
+              src="https://hatscripts.github.io/circle-flags/flags/si.svg"
+            />SL
+          </button>
+          <button
+            (click)="setLanguage('en')"
+            [class.active-lang]="currentLang() === 'en'"
+          >
+            <img
+              src="https://hatscripts.github.io/circle-flags/flags/gb.svg"
+            />EN
+          </button>
+        </li>
+      </ul>
     </div>
-  </div>
+    <div class="menu-icon" (click)="openMenu()">
+      <i class="{{ menuIcon() }}"></i>
+    </div>
+  </nav>
 </header>

@@ -1,5 +1,4 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { AfterPurchaseHuntSpecialComponent } from './pages/after-purchase/pages/after-purchase-hunt-special/after-purchase-hunt-special.component';
 import { AfterPurchaseHuntComponent } from './pages/after-purchase/pages/after-purchase-hunt/after-purchase-hunt.component';
@@ -29,9 +28,3 @@ export const routes: Routes = [
   { path: '', redirectTo: '/about-us', pathMatch: 'full' }, // privzeta stran
   { path: '**', redirectTo: 'contact-us' }, // če je napačna pot
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-})
-export class AppRoutingModule {}

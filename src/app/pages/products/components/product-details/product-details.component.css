@@ -5,7 +5,6 @@
   background: #fff;
   color: black;
   border-radius: 8px;
-  padding: 2rem;
   width: 90%;
   max-width: 1000px;
   height: 70%;
@@ -15,10 +14,14 @@
   transform: translate(-50%, -50%);
 }
 
+.modal-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  padding-bottom: 0;
+}
+
 .close-btn {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
   background: none;
   border: none;
   font-size: 1rem;
@@ -26,73 +29,55 @@
 }
 
 .modal-body {
+  padding: 0 2rem 2rem 2rem;
   display: flex;
   flex-direction: row;
   gap: 2rem;
-  padding-inline: 2rem;
   overflow-y: auto;
   box-shadow: none;
-  padding-right: 0;
 }
 
 .modal-gallery {
-  max-width: 40%;
+  width: 40%;
   height: 100%;
+  flex-shrink: 0;
 }
 
-swiper {
-  width: 100%;
-  height: 100%;
+#carouselId .carousel-item {
+  transition-duration: 0.3s;
 }
 
-swiper-container {
-  --swiper-theme-color: #fcbf49;
-  flex: 1;
+#carouselId .carousel-control-prev,
+#carouselId .carousel-control-next {
+  top: 35%;
+  bottom: 35%;
 }
 
-swiper-slide {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Spremeni barvo puščic */
-swiper-container::part(button-prev),
-swiper-container::part(button-next) {
-  color: var(--background-color); /* ali #ffd62e, kot gumb */
+#carouselId .carousel-control-prev-icon,
+#carouselId .carousel-control-next-icon {
   opacity: 0.5;
-  font-size: 20px;
+  width: 3rem;
+  height: 3rem;
 }
 
-/* Če želiš bolj opazne na hover */
-swiper-container::part(button-prev):hover,
-swiper-container::part(button-next):hover {
-  color: #ffd62e;
+#carouselId .carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230c1421'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
 }
 
-/* Spremeni barvo pagination krogcev */
-swiper-container::part(pagination-bullet) {
-  background-color: var(--background-color);
-  opacity: 0.5;
+#carouselId .carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230c1421'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 }
 
-swiper-container::part(pagination-bullet-active) {
-  background-color: var(--background-color);
+#carouselId .carousel-control-prev:hover .carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffd62e'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+}
+
+#carouselId .carousel-control-next:hover .carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffd62e'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 }
 
 .modal-gallery img,
-.modal-gallery video,
-swiper img,
-swiper video {
-  border-radius: 0 !important;
-}
-/*
- Video/slike naj popolnoma zapolnijo slide*/
-swiper-slide img,
-swiper-slide video {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+.modal-gallery video {
   border-radius: 0 !important;
 }
 
@@ -109,7 +94,7 @@ swiper-slide video {
 }
 
 .modal-content h2 {
-  margin-top: 20px;
+  margin-bottom: 30px;
   font-size: 40px;
   font-family: "DM Serif Text", serif;
   font-weight: 40;
@@ -192,16 +177,10 @@ swiper-slide video {
     max-height: 100vh;
   }
 
-  .close-btn {
-    margin: 2rem;
-    margin-left: auto;
-  }
-
   .modal-body {
     flex-direction: column;
     padding-inline: 0;
     gap: 1rem;
-    margin-top: 3rem;
   }
 
   .modal-gallery {
@@ -233,9 +212,5 @@ swiper-slide video {
     font-size: 20px;
     padding-top: 1rem;
     padding-bottom: 1rem;
-  }
-
-  swiper-container {
-    height: 100%;
   }
 }

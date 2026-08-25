@@ -1,32 +1,34 @@
 import { isPlatformBrowser } from '@angular/common';
 import {
   Component,
+  computed,
   ElementRef,
   HostListener,
-  Inject,
+  inject,
   OnInit,
   PLATFORM_ID,
+  signal,
 } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
-  standalone: true,
   imports: [RouterLink, RouterLinkActive, TranslateModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
 export class HeaderComponent implements OnInit {
-  menuValue: boolean = false;
-  menuIcon: string = 'bi bi-list';
-  currentLang: 'sl' | 'en' = 'sl';
+  private translate = inject(TranslateService);
+  private el = inject(ElementRef);
+  private platformId = inject(PLATFORM_ID);
 
-  constructor(
-    private translate: TranslateService,
-    @Inject(PLATFORM_ID) private platformId: Object,
-    private el: ElementRef,
-  ) {}
+  readonly currentLang = signal<'sl' | 'en'>('sl');
+
+  readonly menuValue = signal(false);
+  readonly menuIcon = computed(() =>
+    this.menuValue() ? 'bi bi-x' : 'bi bi-list',
+  );
 
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: Event) {
@@ -42,9 +44,9 @@ export class HeaderComponent implements OnInit {
       const langToUse =
         savedLang || (browserLang.startsWith('sl') ? 'sl' : 'en');
 
-      this.currentLang = langToUse as 'sl' | 'en';
+      this.currentLang.set(langToUse as 'sl' | 'en');
       this.translate.setDefaultLang('sl');
-      this.translate.use(this.currentLang);
+      this.translate.use(this.currentLang());
     } else {
       this.translate.setDefaultLang('sl');
       this.translate.use('sl');
@@ -52,18 +54,16 @@ export class HeaderComponent implements OnInit {
   }
 
   setLanguage(lang: 'sl' | 'en') {
-    this.currentLang = lang;
+    this.currentLang.set(lang);
     this.translate.use(lang);
     localStorage.setItem('lang', lang);
   }
 
   openMenu() {
-    this.menuValue = !this.menuValue;
-    this.menuIcon = this.menuValue ? 'bi bi-x' : 'bi bi-list';
+    this.menuValue.update((prev) => !prev);
   }
 
   closeMenu() {
-    this.menuValue = false;
-    this.menuIcon = 'bi bi-list';
+    this.menuValue.set(false);
   }
 }
