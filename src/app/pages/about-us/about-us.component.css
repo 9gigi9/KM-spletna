@@ -1,10 +1,10 @@
 .about-us-container {
   display: flex;
   justify-content: center; /* Align text to the right */
-  align-items:center;
+  align-items: center;
   height: 95vh; /* Takes up almost the entire viewport height */
   width: auto;
-  background: url('/assets/images/km_naslovnica.jpg') center/cover no-repeat; /* Image as background */
+  background: url("/assets/images/km_naslovnica.jpg") center/cover no-repeat; /* Image as background */
   position: relative;
   overflow: hidden; /* Ensure gradient mask is visible only within about-us-container */
 }
@@ -14,12 +14,12 @@
   flex-direction: column;
 }
 
-.animation-container{
+.animation-container {
   display: flex;
   justify-content: center;
 }
 
-.subtext h2{
+.subtext h2 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,17 +27,19 @@
   font-family: "DM Serif Text", serif;
   font-style: normal;
   font-weight: normal;
+  font-size: 1.5em; /* Bootstrap's typography enlarges h2 (2rem) beyond the browser default this relied on */
+  margin: 0.83em 0; /* Bootstrap's reboot zeroes margin-top on headings, closing the gap above the h2 that the browser default provided */
   padding-bottom: 15vh;
 }
 
-.button-container{
+.button-container {
   display: flex;
   justify-content: center;
   padding-bottom: 30px;
 }
 
 .rounded-btn {
-  padding: 10px 30px;
+  padding: 15px 30px;
   border-radius: 50px;
   background-color: #ffe57a;
   color: var(--background-color);
@@ -55,16 +57,16 @@
 .about-us-content h1 {
   font-size: 48px;
   color: yellow;
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8),
-               0 0 10px rgba(255, 255, 255, 0.8),
-               0 0 15px rgba(255, 255, 255, 0.8);
+  text-shadow:
+    0 0 5px rgba(255, 255, 255, 0.8),
+    0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 15px rgba(255, 255, 255, 0.8);
   margin-bottom: 20px;
 }
 
-
 /* Media query za manjše zaslone */
 @media (max-width: 800px) {
-   h1 {
-      font-size: 30px;
-    }
+  h1 {
+    font-size: 30px;
+  }
 }

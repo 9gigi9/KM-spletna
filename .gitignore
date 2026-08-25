@@ -43,3 +43,4 @@ Thumbs.db
 
 # CodeGraph (Claude Code indexing helper, local, machine-specific)
 .codegraph/
+.claude/settings.local.json

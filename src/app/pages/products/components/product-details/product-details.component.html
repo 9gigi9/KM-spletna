@@ -1,35 +1,47 @@
-<div class="modal-body">
+<div class="modal-header">
   <button class="close-btn" (click)="closeModal()">
     <i class="bi bi-x-lg"></i>
   </button>
+</div>
 
-  <div class="modal-gallery">
-    <swiper-container
-      navigation="true"
-      pagination="true"
-      loop="true"
-      style="width: 100%; height: 100%"
-    >
-      @for (media of product.gallery; track media) {
-        <swiper-slide>
+<div class="modal-body">
+  <div id="carouselId" class="modal-gallery carousel slide">
+    <div class="carousel-inner h-100">
+      @for (media of product.gallery; track media; let first = $first) {
+        <div class="carousel-item h-100" [class.active]="first">
           @if (media.type === "image") {
             <img
               [src]="media.src"
+              class="h-100 w-100 object-fit-contain"
               alt="Product image"
-              style="width: 100%; border-radius: 8px"
             />
-          }
-          @if (media.type === "video") {
+          } @else if (media.type === "video") {
             <video
               [src]="media.src"
               controls
               preload="metadata"
-              style="width: 100%; border-radius: 8px"
+              class="h-100 w-100 object-fit-contain"
             ></video>
           }
-        </swiper-slide>
+        </div>
       }
-    </swiper-container>
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselId"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselId"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
   </div>
 
   <div class="modal-content">
