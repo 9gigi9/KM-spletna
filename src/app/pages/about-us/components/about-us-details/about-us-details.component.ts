@@ -3,7 +3,6 @@ import { FeedbackComponent } from '../feedback/feedback.component';
 
 @Component({
   selector: 'app-about-us-details',
-  standalone: true,
   imports: [FeedbackComponent],
   templateUrl: './about-us-details.component.html',
   styleUrl: './about-us-details.component.css',

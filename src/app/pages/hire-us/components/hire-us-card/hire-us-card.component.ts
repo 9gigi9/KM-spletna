@@ -1,22 +1,17 @@
-import {Component, Input} from '@angular/core';
-import {CardModule} from "primeng/card";
-import {NgStyle} from "@angular/common";
+import { NgStyle } from '@angular/common';
+import { Component, Input, signal } from '@angular/core';
 
 @Component({
   selector: 'app-hire-us-card',
-  standalone: true,
   templateUrl: './hire-us-card.component.html',
-  imports: [
-    CardModule,
-    NgStyle
-  ],
-  styleUrls: ['./hire-us-card.component.css']
+  imports: [NgStyle],
+  styleUrls: ['./hire-us-card.component.css'],
 })
 export class HireUsCardComponent {
   @Input() title!: string;
   @Input() imagePath!: string;
   @Input() backtext!: string;
-  isHoveredClicked: boolean = false; // Združena spremenljivka za hover in klik
+  isHoveredClicked = signal(false); // Združena spremenljivka za hover in klik
 
   // Pridobi stil ozadja iz imagePath
   get backgroundImage(): string {
@@ -25,6 +20,6 @@ export class HireUsCardComponent {
 
   // Upravljanje klika ali hoverja
   toggleHoverClick(state: boolean): void {
-    this.isHoveredClicked = state;
+    this.isHoveredClicked.set(state);
   }
 }

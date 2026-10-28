@@ -1,16 +1,21 @@
-<div class="custom-card"
-     [ngStyle]="{'background-image': backgroundImage,
-                 'background-color': isHoveredClicked ? 'var(--background-color)' : 'transparent'}"
-     (mouseenter)="toggleHoverClick(true)"
-     (mouseleave)="toggleHoverClick(false)"
-     (touchstart)="toggleHoverClick(true)"
-     (touchend)="toggleHoverClick(false)">
-
+<div
+  class="custom-card"
+  [ngStyle]="{
+    'background-image': backgroundImage,
+    'background-color': isHoveredClicked()
+      ? 'var(--background-color)'
+      : 'transparent',
+  }"
+  (mouseenter)="toggleHoverClick(true)"
+  (mouseleave)="toggleHoverClick(false)"
+  (touchstart)="toggleHoverClick(true)"
+  (touchend)="toggleHoverClick(false)"
+>
   <div class="overlay">
-    @if (isHoveredClicked) {
-    <div  class="back-text">{{ backtext }}</div>
+    @if (isHoveredClicked()) {
+      <div class="back-text">{{ backtext }}</div>
     } @else {
-    <div class="overlay-text">{{title}}</div>
+      <div class="overlay-text">{{ title }}</div>
     }
-     </div>
+  </div>
 </div>

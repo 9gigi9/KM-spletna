@@ -1,13 +1,12 @@
 import { DIALOG_DATA, DialogRef } from '@angular/cdk/dialog';
-import { CommonModule } from '@angular/common';
+
 import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { Product } from '../../../../models/product.model';
 
 @Component({
   selector: 'app-product-details',
-  standalone: true,
-  imports: [CommonModule, TranslateModule],
+  imports: [TranslateModule],
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

@@ -1,64 +1,79 @@
-<div class="modal-body">
+<div class="modal-header">
   <button class="close-btn" (click)="closeModal()">
     <i class="bi bi-x-lg"></i>
   </button>
+</div>
 
-  <div class="modal-gallery">
-    <swiper-container
-      navigation="true"
-      pagination="true"
-      loop="true"
-      style="width: 100%; height: 100%"
+<div class="modal-body">
+  <div id="carouselId" class="modal-gallery carousel slide">
+    <div class="carousel-inner h-100">
+      @for (media of product.gallery; track media; let first = $first) {
+        <div class="carousel-item h-100" [class.active]="first">
+          @if (media.type === "image") {
+            <img
+              [src]="media.src"
+              class="h-100 w-100 object-fit-contain"
+              alt="Product image"
+            />
+          } @else if (media.type === "video") {
+            <video
+              [src]="media.src"
+              controls
+              preload="metadata"
+              class="h-100 w-100 object-fit-contain"
+            ></video>
+          }
+        </div>
+      }
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselId"
+      data-bs-slide="prev"
     >
-      <swiper-slide *ngFor="let media of product.gallery">
-        <img
-          *ngIf="media.type === 'image'"
-          [src]="media.src"
-          alt="Product image"
-          style="width: 100%; border-radius: 8px"
-        />
-        <video
-          *ngIf="media.type === 'video'"
-          [src]="media.src"
-          controls
-          preload="metadata"
-          style="width: 100%; border-radius: 8px"
-        ></video>
-      </swiper-slide>
-    </swiper-container>
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselId"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
   </div>
 
   <div class="modal-content">
     <h2>{{ product.title | translate }}</h2>
     <div class="long-desc">
-      <ng-container *ngIf="product.isDescArray; else stringDesc">
-        <ng-container *ngFor="let textPart of product.longDescArray">
+      @if (product.isDescArray) {
+        @for (textPart of product.longDescArray; track textPart) {
           <span>
-            <ng-container *ngIf="textPart.isBold; else normalText">
+            @if (textPart.isBold) {
               <strong>{{ textPart.text | translate }}</strong>
-            </ng-container>
-            <ng-template #normalText>{{
-              textPart.text | translate
-            }}</ng-template>
-
+            } @else {
+              {{ textPart.text | translate }}
+            }
             <!-- Dodaj presledek ali prelom -->
-            <ng-container *ngIf="textPart.newLine; else space">
+            @if (textPart.newLine) {
               <br /><br />
-            </ng-container>
-            <ng-template #space>&nbsp;</ng-template>
+            } @else {
+              &nbsp;
+            }
           </span>
-        </ng-container>
-      </ng-container>
-
-      <ng-template #stringDesc>
-        <p *ngFor="let paragraph of product.longDesc.split('\n\n')">
-          {{ paragraph }}
-        </p>
-      </ng-template>
+        }
+      } @else {
+        @for (paragraph of product.longDesc.split("\n\n"); track paragraph) {
+          <p>
+            {{ paragraph }}
+          </p>
+        }
+      }
     </div>
 
     <div class="modal-bottom">
-      <ng-container *ngIf="product.onDiscount; else regularPrice">
+      @if (product.onDiscount) {
         <div class="discount-line">
           <span class="original-price">{{ product.price }} €</span>
           <span class="discount-price">{{ product.discountPrice }} €</span>
@@ -66,10 +81,9 @@
             -{{ product.discountPercentage }}%</span
           >
         </div>
-      </ng-container>
-      <ng-template #regularPrice>
+      } @else {
         <span class="price">{{ product.price }} €</span>
-      </ng-template>
+      }
 
       <button class="buy-btn" (click)="goToStripeLink()">
         {{ "store.buy" | translate }}

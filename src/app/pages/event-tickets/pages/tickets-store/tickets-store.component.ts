@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { TicketCardComponent } from '../../components/ticket-card/ticket-card.component';
@@ -6,8 +6,7 @@ import { EventService } from '../../services/event.service';
 
 @Component({
   selector: 'app-tickets-store',
-  standalone: true,
-  imports: [CommonModule, TicketCardComponent],
+  imports: [TicketCardComponent, AsyncPipe],
   templateUrl: './tickets-store.component.html',
   styleUrl: './tickets-store.component.css',
 })

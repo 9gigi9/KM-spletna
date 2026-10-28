@@ -1,28 +1,121 @@
 <header>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3 col-sm-3 col-3 logo">
-        <img src="assets/images/logo.png" class="logo-img" alt="Kviz mojster logo" routerLink="/about-us" />
-      </div>
+  <nav class="navbar d-flex justify-content-between align-items-center">
+    <img
+      role="button"
+      src="assets/images/logo.png"
+      class="logo-img cursor-pointer"
+      alt="Kviz mojster logo"
+      routerLink="/about-us"
+    />
 
-      <div class="col-md-9 col-sm-9 col-9">
-        <div class="desktop_menu" [class.mobile_menu]="menuValue">
-          <ul>
-            <li routerLink="/about-us" routerLinkActive="active" (click)="closeMenu()">{{ 'header.aboutUs' | translate }}</li>
-            <li routerLink="/hire-us" routerLinkActive="active" (click)="closeMenu()">{{ 'header.hireUs' | translate }}</li>
-            <li routerLink="/tickets-store" routerLinkActive="active" (click)="closeMenu()">{{ 'header.ticketsStore' | translate }}</li>
-            <li routerLink="/store" routerLinkActive="active" (click)="closeMenu()">{{ 'header.store' | translate }}</li>
-            <li routerLink="/contact-us" routerLinkActive="active" (click)="closeMenu()">{{ 'header.contact' | translate }}</li>
-            <li class="language-switcher">
-              <button (click)="setLanguage('sl')" [class.active-lang]="currentLang === 'sl'"><img src="https://hatscripts.github.io/circle-flags/flags/si.svg"/>SL</button>
-              <button (click)="setLanguage('en')" [class.active-lang]="currentLang === 'en'"><img src="https://hatscripts.github.io/circle-flags/flags/gb.svg"/>EN</button>
-            </li>
-          </ul>
-        </div>
-        <div class="menu-icon" (click)="openMenu()">
-          <i class="{{menuIcon}}"></i>
-        </div>
-      </div>
+    <div class="desktop_menu" [class.mobile_menu]="menuValue()">
+      <ul>
+        <li
+          class="nav-item"
+          routerLink="/about-us"
+          routerLinkActive="active"
+          (click)="closeMenu()"
+        >
+          {{ "header.aboutUs" | translate }}
+        </li>
+        <li
+          class="nav-item"
+          routerLink="/hire-us"
+          routerLinkActive="active"
+          (click)="closeMenu()"
+        >
+          {{ "header.hireUs" | translate }}
+        </li>
+        <li
+          class="nav-item"
+          routerLink="/tickets-store"
+          routerLinkActive="active"
+          (click)="closeMenu()"
+        >
+          {{ "header.ticketsStore" | translate }}
+        </li>
+        <li
+          class="nav-item"
+          routerLink="/store"
+          routerLinkActive="active"
+          (click)="closeMenu()"
+        >
+          {{ "header.store" | translate }}
+        </li>
+        <li
+          class="nav-item"
+          routerLink="/contact-us"
+          routerLinkActive="active"
+          (click)="closeMenu()"
+        >
+          {{ "header.contact" | translate }}
+        </li>
+        <li
+          class="nav-item"
+          routerLink="/my-quizzes"
+          routerLinkActive="active"
+          (click)="closeMenu()"
+        >
+          {{ "header.myQuizzes" | translate }}
+        </li>
+        <li class="nav-item language-switcher">
+          <button
+            (click)="setLanguage('sl')"
+            [class.active-lang]="currentLang() === 'sl'"
+          >
+            <img
+              src="https://hatscripts.github.io/circle-flags/flags/si.svg"
+            />SL
+          </button>
+          <button
+            (click)="setLanguage('en')"
+            [class.active-lang]="currentLang() === 'en'"
+          >
+            <img
+              src="https://hatscripts.github.io/circle-flags/flags/gb.svg"
+            />EN
+          </button>
+        </li>
+
+        @if (isMobile()) {
+          <li class="user-icon flex-column">
+            <ng-container *ngTemplateOutlet="userAvatar" />
+            <app-user-menu (navigate)="closeMenu()" />
+          </li>
+        } @else {
+          <li class="user-icon nav-item dropdown">
+            <a
+              #userDropdownToggle
+              class="nav-link"
+              role="button"
+              data-bs-toggle="dropdown"
+              data-bs-auto-close="outside"
+              aria-expanded="false"
+            >
+              <ng-container *ngTemplateOutlet="userAvatar" />
+            </a>
+            <div class="dropdown-menu dropdown-menu-end">
+              <app-user-menu (navigate)="closeMenu()" />
+            </div>
+          </li>
+        }
+      </ul>
     </div>
-  </div>
+    <div class="menu-icon" (click)="openMenu()">
+      <i class="{{ menuIcon() }}"></i>
+    </div>
+  </nav>
 </header>
+
+<ng-template #userAvatar>
+  @if (authService.currentUser()?.photoURL; as photoURL) {
+    <img
+      [src]="photoURL"
+      class="avatar-img rounded-circle object-fit-cover align-middle"
+      alt=""
+      referrerpolicy="no-referrer"
+    />
+  } @else {
+    <i class="bi bi-person"></i>
+  }
+</ng-template>

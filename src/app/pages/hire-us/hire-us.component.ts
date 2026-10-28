@@ -4,7 +4,6 @@ import { HireUsCardsContainerComponent } from './components/hire-us-cards-contai
 
 @Component({
   selector: 'app-hire-us',
-  standalone: true,
   imports: [KmAnimationComponent, HireUsCardsContainerComponent],
   templateUrl: './hire-us.component.html',
   styleUrl: './hire-us.component.css',

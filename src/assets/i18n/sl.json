@@ -3,8 +3,12 @@
     "aboutUs": "Kdo smo",
     "hireUs": "Najemi nas",
     "store": "Trgovina",
+    "myQuizzes": "Moji kvizi",
     "contact": "Kontakt",
-    "ticketsStore": "Vstopnice"
+    "ticketsStore": "Vstopnice",
+    "noLoggedInUser": "Uporabnik ni vpisan",
+    "logout": "Odjava",
+    "signInWithGoogle": "Prijava z Googlom"
   },
   "store": {
     "buy": "Kupi",
@@ -48,71 +52,71 @@
         "part4": "📧 Dostop do kvizov (na vaš e-mail) prejmete v roku 24 ur od nakupa. Če pa si želite igrati hitreje, nam pišete na: info@kvizmojster.com.",
         "part5": "Kvizi bodo dostopni 4 mesece od nakupa.",
         "part6": "*POZOR. KVIZ IPSILON ni primeren za tiste, ki ste se udeležili kviza 26. 6. 2025 v New Castlu in CMK-ju."
-         }
-      },
+      }
+    },
 
-      "quizSigma": {
-        "title": "Splošni pub kviz za doma SIGMA",
-        "shortDesc": "Digitalni pub kviz za doma splošnih tematik. Primeren za vse generacije in interesne skupine.",
-        "longDesc": {
-          "part1": "Popestrite prosti čas s prijatelji ali družino z novo različico kviza v udobju dnevne sobe ali sredi druženja na prostem.* 💡",
-          "part2": "Splošni kviz je sestavljen iz 10 različnih tematik vprašanj, primernih za vse generacije. Vključuje tudi zvočne in slikovne vsebine.",
-          "part3": "Za igro potrebujete le računalnik, dostop do interneta, papirje in pisala ✍. Na začetku vas čakajo kratka navodila, nato pa celoten kviz z vsemi posnetki in rešitvami. Samo sledite projekciji in uživajte! 🍻✌🏽",
-          "part4": "📧 Dostop do kvizov (na vaš e-mail) prejmete v roku 24 ur od nakupa. Če pa si želite igrati hitreje, nam pišete na: info@kvizmojster.com.",
-          "part5": "Kvizi bodo dostopni 4 mesece od nakupa.",
-          "part6": "*POZOR. KVIZ SIGMA ni primeren za tiste, ki ste se udeležili kviza 16. 1. 2025 v New Castlu ali 21. 1. 2025 v Boschtizu."
-          }
-        },
+    "quizSigma": {
+      "title": "Splošni pub kviz za doma SIGMA",
+      "shortDesc": "Digitalni pub kviz za doma splošnih tematik. Primeren za vse generacije in interesne skupine.",
+      "longDesc": {
+        "part1": "Popestrite prosti čas s prijatelji ali družino z novo različico kviza v udobju dnevne sobe ali sredi druženja na prostem.* 💡",
+        "part2": "Splošni kviz je sestavljen iz 10 različnih tematik vprašanj, primernih za vse generacije. Vključuje tudi zvočne in slikovne vsebine.",
+        "part3": "Za igro potrebujete le računalnik, dostop do interneta, papirje in pisala ✍. Na začetku vas čakajo kratka navodila, nato pa celoten kviz z vsemi posnetki in rešitvami. Samo sledite projekciji in uživajte! 🍻✌🏽",
+        "part4": "📧 Dostop do kvizov (na vaš e-mail) prejmete v roku 24 ur od nakupa. Če pa si želite igrati hitreje, nam pišete na: info@kvizmojster.com.",
+        "part5": "Kvizi bodo dostopni 4 mesece od nakupa.",
+        "part6": "*POZOR. KVIZ SIGMA ni primeren za tiste, ki ste se udeležili kviza 16. 1. 2025 v New Castlu ali 21. 1. 2025 v Boschtizu."
+      }
+    },
 
-      "springBundleTwo": {
-        "title": "Paket dveh kvizov",
-        "shortDesc": "Dva digitalna pub kviza za doma po ekskluzivni ceni.",
-        "longDesc": {
-          "part1": "Popestrite prosti čas s prijatelji in družino z ekskluzivnim paketom dveh kvizov, primernih za vse generacije!* 💡",
-          "part2": "Namesto enega, prejmete dva različna kviza. Izbirate lahko med tremi splošnimi in enim tematskim kvizom o filmih. Dva kviza skupno vsebujeta okoli 100 različnih vprašanj, zvočnih in slikovnih vsebin!",
-          "part4": "📧 Dostop do kvizov (na vaš e-mail) prejmete v roku 24 ur od nakupa. Če pa si želite igrati hitreje, nam pišete na: info@kvizmojster.com.",
-          "part5": "Kvizi bodo dostopni 4 mesece od nakupa.",
-          "part6": "*POZOR. Če ste se udeležili katerega od spodnjih kvizov in si želite nadomestni kviz, nas kontaktirajte na info@kvizmojster.com:",
-          "part7": "FILMSKI KVIZ = 24. 2. 2026 v Kinu Bežigrad.",
-          "part8": "KVIZ DELTA = ligaški kviz 20. 4. 2026.",
-          "part9": "KVIZ IPSILON = 26. 6. 2025 v New Castlu in CMK-ju, nagradni kviz za doma AVGUST 1",
-          "part10": "KVIZ SIGMA =  16. 1. 2025 v New Castlu in 21. 1. 2025 v Boschtizu."
-          }
-        },
+    "springBundleTwo": {
+      "title": "Paket dveh kvizov",
+      "shortDesc": "Dva digitalna pub kviza za doma po ekskluzivni ceni.",
+      "longDesc": {
+        "part1": "Popestrite prosti čas s prijatelji in družino z ekskluzivnim paketom dveh kvizov, primernih za vse generacije!* 💡",
+        "part2": "Namesto enega, prejmete dva različna kviza. Izbirate lahko med tremi splošnimi in enim tematskim kvizom o filmih. Dva kviza skupno vsebujeta okoli 100 različnih vprašanj, zvočnih in slikovnih vsebin!",
+        "part4": "📧 Dostop do kvizov (na vaš e-mail) prejmete v roku 24 ur od nakupa. Če pa si želite igrati hitreje, nam pišete na: info@kvizmojster.com.",
+        "part5": "Kvizi bodo dostopni 4 mesece od nakupa.",
+        "part6": "*POZOR. Če ste se udeležili katerega od spodnjih kvizov in si želite nadomestni kviz, nas kontaktirajte na info@kvizmojster.com:",
+        "part7": "FILMSKI KVIZ = 24. 2. 2026 v Kinu Bežigrad.",
+        "part8": "KVIZ DELTA = ligaški kviz 20. 4. 2026.",
+        "part9": "KVIZ IPSILON = 26. 6. 2025 v New Castlu in CMK-ju, nagradni kviz za doma AVGUST 1",
+        "part10": "KVIZ SIGMA =  16. 1. 2025 v New Castlu in 21. 1. 2025 v Boschtizu."
+      }
+    },
 
-        "springBundleThree": {
-          "title": "Paket treh kvizov",
-          "shortDesc": "Trije digitalni pub kvizi za doma po ekskluzivni ceni.",
-          "longDesc": {
-            "part1": "Popestrite prosti čas s prijatelji in družino z ekskluzivnim paketom treh kvizov, primernih za vse generacije!* 💡",
-            "part2": "Namesto enega, prejmete tri različne kvize. Izbirate lahko med tremi splošnimi in enim tematskim kvizom o filmih. Trije kvizi skupno vsebujejo okoli 150 različnih vprašanj, zvočnih in slikovnih vsebin!",
-            "part4": "📧 Dostop do kvizov (na vaš e-mail) prejmete v roku 24 ur od nakupa. Če pa si želite igrati hitreje, nam pišete na: info@kvizmojster.com.",
-            "part5": "Kvizi bodo dostopni 4 mesece od nakupa.",
-            "part6": "*POZOR. Če ste se udeležili katerega od spodnjih kvizov in si želite nadomestni kviz, nas kontaktirajte na info@kvizmojster.com:",
-            "part7": "FILMSKI KVIZ = 24. 2. 2026 v Kinu Bežigrad.",
-            "part8": "KVIZ DELTA = ligaški kviz 20. 4. 2026.",
-            "part9": "KVIZ IPSILON = 26. 6. 2025 v New Castlu in CMK-ju, nagradni kviz za doma AVGUST 1",
-            "part10": "KVIZ SIGMA =  16. 1. 2025 v New Castlu in 21. 1. 2025 v Boschtizu."
-          }
-        },
+    "springBundleThree": {
+      "title": "Paket treh kvizov",
+      "shortDesc": "Trije digitalni pub kvizi za doma po ekskluzivni ceni.",
+      "longDesc": {
+        "part1": "Popestrite prosti čas s prijatelji in družino z ekskluzivnim paketom treh kvizov, primernih za vse generacije!* 💡",
+        "part2": "Namesto enega, prejmete tri različne kvize. Izbirate lahko med tremi splošnimi in enim tematskim kvizom o filmih. Trije kvizi skupno vsebujejo okoli 150 različnih vprašanj, zvočnih in slikovnih vsebin!",
+        "part4": "📧 Dostop do kvizov (na vaš e-mail) prejmete v roku 24 ur od nakupa. Če pa si želite igrati hitreje, nam pišete na: info@kvizmojster.com.",
+        "part5": "Kvizi bodo dostopni 4 mesece od nakupa.",
+        "part6": "*POZOR. Če ste se udeležili katerega od spodnjih kvizov in si želite nadomestni kviz, nas kontaktirajte na info@kvizmojster.com:",
+        "part7": "FILMSKI KVIZ = 24. 2. 2026 v Kinu Bežigrad.",
+        "part8": "KVIZ DELTA = ligaški kviz 20. 4. 2026.",
+        "part9": "KVIZ IPSILON = 26. 6. 2025 v New Castlu in CMK-ju, nagradni kviz za doma AVGUST 1",
+        "part10": "KVIZ SIGMA =  16. 1. 2025 v New Castlu in 21. 1. 2025 v Boschtizu."
+      }
+    },
 
-        "springBundleFour": {
-          "title": "Paket štirih kvizov",
-          "shortDesc": "Štirje digitalni pub kvizi za doma po ekskluzivni ceni.",
-          "longDesc": {
-            "part1": "Popestrite prosti čas s prijatelji in družino z ekskluzivnim paketom štirih kvizov, primernih za vse generacije!* 💡",
-            "part2": "Namesto enega, prejmete štiri različne kvize. Izbirate lahko med tremi splošnimi in enim tematskim kvizom o filmih. Štirje kvizi skupno vsebujejo prek 200 različnih vprašanj, zvočnih in slikovnih vsebin!",
-            "part3": "📧 Dostop do kvizov (na vaš e-mail) prejmete v roku 24 ur od nakupa. Če pa si želite igrati hitreje, nam pišete na: info@kvizmojster.com.",
-            "part4": "Kvizi bodo dostopni 4 mesece od nakupa.",
-            "part5": "*POZOR. Če ste se udeležili katerega od spodnjih kvizov in si želite nadomestni kviz, nas kontaktirajte na info@kvizmojster.com:",
-            "part6": "FILMSKI KVIZ = 24. 2. 2026 v Kinu Bežigrad.",
-            "part7": "KVIZ DELTA = ligaški kviz 20. 4. 2026.",
-            "part8": "KVIZ IPSILON = 26. 6. 2025 v New Castlu in CMK-ju, nagradni kviz za doma AVGUST 1",
-            "part9": "KVIZ SIGMA =  16. 1. 2025 v New Castlu in 21. 1. 2025 v Boschtizu."
-          }
-        },
+    "springBundleFour": {
+      "title": "Paket štirih kvizov",
+      "shortDesc": "Štirje digitalni pub kvizi za doma po ekskluzivni ceni.",
+      "longDesc": {
+        "part1": "Popestrite prosti čas s prijatelji in družino z ekskluzivnim paketom štirih kvizov, primernih za vse generacije!* 💡",
+        "part2": "Namesto enega, prejmete štiri različne kvize. Izbirate lahko med tremi splošnimi in enim tematskim kvizom o filmih. Štirje kvizi skupno vsebujejo prek 200 različnih vprašanj, zvočnih in slikovnih vsebin!",
+        "part3": "📧 Dostop do kvizov (na vaš e-mail) prejmete v roku 24 ur od nakupa. Če pa si želite igrati hitreje, nam pišete na: info@kvizmojster.com.",
+        "part4": "Kvizi bodo dostopni 4 mesece od nakupa.",
+        "part5": "*POZOR. Če ste se udeležili katerega od spodnjih kvizov in si želite nadomestni kviz, nas kontaktirajte na info@kvizmojster.com:",
+        "part6": "FILMSKI KVIZ = 24. 2. 2026 v Kinu Bežigrad.",
+        "part7": "KVIZ DELTA = ligaški kviz 20. 4. 2026.",
+        "part8": "KVIZ IPSILON = 26. 6. 2025 v New Castlu in CMK-ju, nagradni kviz za doma AVGUST 1",
+        "part9": "KVIZ SIGMA =  16. 1. 2025 v New Castlu in 21. 1. 2025 v Boschtizu."
+      }
+    },
 
-          "digitalQuizMovies": {
+    "digitalQuizMovies": {
       "title": "Filmski pub kviz za doma",
       "shortDesc": "Digitalni pub kviz za vse ljubitelje filma, poln legendarnih prizorov, soundtrackov in filmskih izzivov.",
       "longDesc": {

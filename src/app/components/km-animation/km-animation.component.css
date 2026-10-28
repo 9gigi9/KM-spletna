@@ -9,10 +9,12 @@ h1 {
   color: white;
   font-size: 8vh; /* Velikost pisave se prilagaja glede na širino zaslona */
   line-height: 0.1;
+  margin: 0.67em 0; /* Bootstrap's reboot shrinks the default h1 margin, causing overlap with the tight line-height */
 /*  font-family: "DM Serif Text", serif;
   font-weight: 400;
   font-style: normal;*/
   font-family: 'Tahoma', sans-serif;
+  font-weight: bold; /* Bootstrap sets headings to font-weight: 500 by default, lighter than the browser's default bold */
   letter-spacing: 5px; /* Povečanje razmaka med črkami */
   /*letter-spacing: 5px; !* Povečanje razmaka med črkami *!*/
 }

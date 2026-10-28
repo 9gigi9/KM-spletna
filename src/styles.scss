@@ -1,3 +1,4 @@
+@use "bootstrap/scss/bootstrap";
 @import "bootstrap-icons/font/bootstrap-icons.css";
 
 :root {
@@ -10,7 +11,6 @@
   background-color: var(--background-color);
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   color: white;
 }
 
@@ -22,21 +22,31 @@
 
 /*preimenuj*/
 .tajawal-regular {
-  font-family: 'Didact Gothic', sans-serif;
+  font-family: "Didact Gothic", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
-html, body, form, fieldset, table, tr, td, img {
+html,
+body,
+form,
+fieldset,
+img {
   margin: 0;
   padding: 0;
-  font: 100%/150% 'Didact Gothic', sans-serif
+  font:
+    100%/150% "Didact Gothic",
+    sans-serif;
 }
 
-input, button, select, textarea, optgroup, option {
+input,
+button,
+select,
+textarea,
+optgroup,
+option {
   font-family: inherit;
   font-size: inherit;
   font-style: inherit;
   font-weight: inherit;
 }
-

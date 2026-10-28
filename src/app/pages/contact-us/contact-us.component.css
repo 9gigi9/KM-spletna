@@ -1,15 +1,16 @@
-.body{
+.body {
   display: flex;
   flex-direction: row;
   background-color: var(--background-color);
-  height: calc(100vh - 60px); /* Adjust 60px to match the height of your header */
-  padding: 20px;
+  height: calc(
+    100vh - 60px
+  ); /* Adjust 60px to match the height of your header */
   align-items: center;
   justify-content: center;
   padding-bottom: 10vh;
   border-top: 1px solid var(--lighter-blue);
 }
-.left-side{
+.left-side {
   display: flex;
   flex-grow: 1;
   flex-direction: column;
@@ -33,12 +34,11 @@ p {
 
 .contact-us h1 {
   font-size: 48px; /* Adjust the font size as needed */
-  margin-top: 0px;
+  margin: 1rem 0;
   font-family: "DM Serif Text", serif;
   font-weight: 400;
   font-style: normal;
 }
-
 
 .contact-container {
   /*padding-top: 5%;*/
@@ -97,13 +97,12 @@ p {
     display: flex;
     flex-direction: column;
     height: auto;
-    padding-top: 15%;
+    padding-top: 10%;
   }
 
   p {
     font-size: 20px;
   }
-
 
   .contact-container {
     flex-direction: column; /* Promijeni raspored u stupce za male ekrane */

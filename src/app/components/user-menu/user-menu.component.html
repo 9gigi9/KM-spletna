@@ -1,0 +1,17 @@
+<div class="user-menu">
+  @if (!this.authService.currentUser()) {
+    @if (!isMobile()) {
+      <div>
+        {{ "header.noLoggedInUser" | translate }}
+      </div>
+    }
+    <app-google-login-button (loginClick)="signInWithGoogle()" />
+  } @else {
+    <div>
+      {{ authService.currentUser()?.displayName }}
+    </div>
+    <button type="button" class="logout-button" (click)="signOut()">
+      {{ "header.logout" | translate }}
+    </button>
+  }
+</div>

@@ -7,13 +7,13 @@
     80vh - 60px
   ); /* Adjust 60px to match the height of your header */
   justify-content: center;
-  padding: 15vh;
+  padding: 8vh 5vw;
   align-self: stretch; /* po višini, če je vertikalni flex */
   gap: 4vw;
 }
 
 @media (max-width: 768px) {
   .tickets-container {
-    padding: 5vh;
+    padding: 4vh 5vw;
   }
 }
