@@ -22,5 +22,6 @@ export interface Product {
   longDesc: string;
   gallery: ProductMedia[];
   stripeLink: string;
+  homeQuiz?: boolean;
+  quizId?: string;
 }
-

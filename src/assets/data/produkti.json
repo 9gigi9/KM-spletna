@@ -291,5 +291,43 @@
       { "type": "image", "src": "assets/images/products/lov-na-zaklad/lovulica.jpg" }
     ],
     "stripeLink": "https://buy.stripe.com/fZu00lfDGgOU1ufbml5J60c"
+  },
+  {
+    "id": 10,
+    "title": "Kviz za doma: quiz-1",
+    "shortDesc": "Testni kviz za doma 1",
+    "price": "29,99",
+    "onDiscount": false,
+    "discountPrice": "",
+    "discountPercentage": "",
+    "imgUrl": "assets/images/products/gallery/cardimage/delta.jpg",
+    "isDescArray": false,
+    "longDescArray": [],
+    "longDesc": "Opis kviza.",
+    "gallery": [
+      { "type": "image", "src": "assets/images/products/gallery/cardimage/delta.jpg" }
+    ],
+    "stripeLink": "https://buy.stripe.com/test_8x28wO4O94wu9Zkao7eEo01",
+    "homeQuiz": true,
+    "quizId": "quiz-1"
+  },
+  {
+    "id": 11,
+    "title": "Kviz za doma: quiz-2",
+    "shortDesc": "Testni kviz za doma 2",
+    "price": "24,99",
+    "onDiscount": false,
+    "discountPrice": "",
+    "discountPercentage": "",
+    "imgUrl": "assets/images/products/gallery/cardimage/ipsilon.jpg",
+    "isDescArray": false,
+    "longDescArray": [],
+    "longDesc": "Opis kviza.",
+    "gallery": [
+      { "type": "image", "src": "assets/images/products/gallery/cardimage/ipsilon.jpg" }
+    ],
+    "stripeLink": "https://buy.stripe.com/test_cNi00i5Sd5Ayb3o0NxeEo00",
+    "homeQuiz": true,
+    "quizId": "quiz-2"
   }
 ]

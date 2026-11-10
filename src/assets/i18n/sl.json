@@ -11,6 +11,7 @@
     "signInWithGoogle": "Prijava z Googlom"
   },
   "store": {
+    "loginToBuy": "Za nakup kviza za doma se prijavite.",
     "buy": "Kupi",
     "treasureHunt": {
       "title": "Lov na zaklad: Beneška skrivnost Kopra",

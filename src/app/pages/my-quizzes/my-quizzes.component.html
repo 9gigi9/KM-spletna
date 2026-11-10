@@ -9,12 +9,9 @@
           [class.active]="quizId === selectedQuizId()"
           (click)="selectedQuizId.set(quizId)"
         >
-          <!-- test only: cover found by quizId -->
-          <img
-            class="object-fit-cover rounded"
-            [src]="'assets/images/products/gallery/cardimage/ipsilon.jpg'"
-            alt=""
-          />
+          @if (cover(quizId); as cover) {
+            <img class="object-fit-cover rounded" [src]="cover" alt="" />
+          }
         </button>
       }
     </div>

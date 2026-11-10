@@ -85,9 +85,18 @@
         <span class="price">{{ product.price }} €</span>
       }
 
-      <button class="buy-btn" (click)="goToStripeLink()">
-        {{ "store.buy" | translate }}
-      </button>
+      @if (product.homeQuiz && !authService.currentUser()) {
+        <div class="d-flex flex-column align-items-end gap-1">
+          <span class="login-hint">{{ "store.loginToBuy" | translate }}</span>
+          <app-google-login-button
+            (loginClick)="authService.signInWithGoogle()"
+          />
+        </div>
+      } @else {
+        <button class="buy-btn" (click)="goToStripeLink()">
+          {{ "store.buy" | translate }}
+        </button>
+      }
     </div>
   </div>
 </div>

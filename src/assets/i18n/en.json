@@ -11,6 +11,7 @@
     "signInWithGoogle": "Sign in with Google"
   },
   "store": {
+    "loginToBuy": "Log in to buy a home quiz.",
     "buy": "Buy",
     "treasureHunt": {
       "title": "Treasure Hunt: The Venetian Secret of Koper",
