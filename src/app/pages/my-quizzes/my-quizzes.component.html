@@ -1,1 +1,45 @@
-<div class="p-4">kvizkotiii</div>
+@if (quizIds.hasValue() && quizIds.value().length) {
+  <div class="d-flex flex-column flex-md-row w-100 h-100">
+    <div
+      class="quiz-list d-flex flex-row flex-md-column gap-3 p-3 overflow-auto"
+    >
+      @for (quizId of quizIds.value(); track quizId) {
+        <button
+          class="quiz-cover ratio ratio-4x3 flex-shrink-0 bg-secondary-subtle rounded"
+          [class.active]="quizId === selectedQuizId()"
+          (click)="selectedQuizId.set(quizId)"
+        >
+          <!-- test only: cover found by quizId -->
+          <img
+            class="object-fit-cover rounded"
+            [src]="'assets/images/products/gallery/cardimage/ipsilon.jpg'"
+            alt=""
+          />
+        </button>
+      }
+    </div>
+    <div class="flex-grow-1 p-3">
+      @if (selectedQuizId(); as selectedQuizId) {
+        <app-quiz [quizId]="selectedQuizId" />
+      }
+    </div>
+  </div>
+} @else {
+  <div class="d-flex flex-column align-items-center w-100 gap-3 pt-5">
+    @if (authService.currentUser() === null) {
+      <p>{{ "myQuizzes.loginToSee" | translate }}</p>
+      <app-google-login-button (loginClick)="authService.signInWithGoogle()" />
+    } @else if (quizIds.error()) {
+      <p class="text-danger">{{ "myQuizzes.loadError" | translate }}</p>
+    } @else if (quizIds.hasValue()) {
+      <p>{{ "myQuizzes.noQuizzes" | translate }}</p>
+      <a class="store-button" routerLink="/store">{{
+        "myQuizzes.goToStore" | translate
+      }}</a>
+    } @else {
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    }
+  </div>
+}

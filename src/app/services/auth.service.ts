@@ -12,7 +12,8 @@ import { FirebaseService } from './firebase.service';
 export class AuthService {
   private readonly auth = inject(FirebaseService).auth;
 
-  readonly currentUser = signal<User | null>(null);
+  // undefined until firebase restores the session
+  readonly currentUser = signal<User | null | undefined>(undefined);
 
   constructor() {
     if (this.auth) {

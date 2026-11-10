@@ -230,5 +230,12 @@
     "locationLink": "Povezava do lokacije trgovine",
     "mailText": "Za dodatna vprašanja nam lahko pišete na",
     "goodLuck": "Vso srečo pri iskanju zaklada! \uD83D\uDDDD️"
+  },
+  "myQuizzes": {
+    "loginToSee": "Za ogled kvizov se prijavite.",
+    "noQuizzes": "Nimate še nobenega kviza.",
+    "goToStore": "Kvizi za doma",
+    "loadError": "Kvizov ni bilo mogoče naložiti. Poskusite znova kasneje.",
+    "quizError": "Kviza ni bilo mogoče naložiti. Poskusite znova kasneje."
   }
 }

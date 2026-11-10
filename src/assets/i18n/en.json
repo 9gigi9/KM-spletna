@@ -250,5 +250,12 @@
     "locationLink": "Store location link",
     "mailText": "For any questions, feel free to contact us at",
     "goodLuck": "Good luck chasing the treasure! 🗝️"
+  },
+  "myQuizzes": {
+    "loginToSee": "Log in to see your quizzes.",
+    "noQuizzes": "You don't have any quizzes yet.",
+    "goToStore": "Quizzes",
+    "loadError": "Couldn't load your quizzes. Please try again later.",
+    "quizError": "Couldn't load this quiz. Please try again later."
   }
 }

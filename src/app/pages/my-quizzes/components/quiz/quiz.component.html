@@ -1,0 +1,19 @@
+@if (error()) {
+  <p class="text-danger">{{ "myQuizzes.quizError" | translate }}</p>
+} @else {
+  @if (loading()) {
+    <div class="d-flex justify-content-center align-items-center h-100">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  }
+  @if (safeUrl(); as safeUrl) {
+    <iframe
+      class="w-100 h-100"
+      [class.d-none]="loading()"
+      [src]="safeUrl"
+      (load)="loading.set(false)"
+    ></iframe>
+  }
+}

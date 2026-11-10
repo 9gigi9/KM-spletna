@@ -2,6 +2,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { initializeApp } from 'firebase/app';
 import { Auth, getAuth } from 'firebase/auth';
+import { Firestore, getFirestore } from 'firebase/firestore';
 import { firebaseConfig } from '../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
@@ -11,4 +12,7 @@ export class FirebaseService {
 
   readonly app = initializeApp(firebaseConfig);
   readonly auth: Auth | null = this.isBrowser ? getAuth(this.app) : null;
+  readonly firestore: Firestore | null = this.isBrowser
+    ? getFirestore(this.app)
+    : null;
 }
